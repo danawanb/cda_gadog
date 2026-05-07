@@ -9,11 +9,10 @@ st.set_page_config(page_title="Dashboard Harga Rumah", layout="wide")
 
 @st.cache_resource
 def load_model():
-    with open("rumah", "rb") as f:
+    with open("model_rumah.pkl", "rb") as f:
         return pickle.load(f)
 
-model = load_model()
-skl_model = model.skl_model
+skl_model = load_model()
 
 # --- Sidebar ---
 st.sidebar.header("Input Fitur")
