@@ -55,11 +55,7 @@ data = data[
 # --- Header ---
 st.title("Dashboard Analitik DJPb")
 st.subheader("Penugasan CDA Kelompok 3 — Gap Kompetensi Manajerial")
-st.caption(
-    "Pipeline replika Orange: Formula `Gap = Realisasi - Ekspektasi`, "
-    "Select Rows AND `Gap_X != 0` untuk 9 kompetensi, "
-    "Group by, K-Means, Scatter Plot."
-)
+
 
 c1, c2, c3, c4 = st.columns(4)
 c1.metric("Total Data Mentah", f"{len(df_full):,}")
