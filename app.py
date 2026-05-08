@@ -54,7 +54,7 @@ data = data[
 
 # --- Header ---
 st.title("Dashboard Analitik DJPb")
-st.subheader("Penugasan CDA Kelompok 3 — Gap Kompetensi Manajerial")
+st.subheader("Penugasan CDA Kelompok 3 — Gap Kompetensi Kepemimpinan")
 
 
 c1, c2, c3, c4 = st.columns(4)
