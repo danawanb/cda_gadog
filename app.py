@@ -72,6 +72,21 @@ with tab_data:
     st.markdown("#### Pratinjau Data (setelah Formula + Select Rows)")
     st.dataframe(data.head(50), use_container_width=True)
 
+    st.markdown("#### Jumlah Responden per Lokasi Kantor Penugasan")
+    lokasi_count = (
+        data["Lokasi kantor penugasan"].value_counts()
+        .rename_axis("Lokasi kantor penugasan").reset_index(name="Jumlah Responden")
+    )
+    col_l, col_r = st.columns([1, 1])
+    with col_l:
+        st.dataframe(lokasi_count, use_container_width=True, hide_index=True,
+                     height=380)
+    with col_r:
+        st.bar_chart(
+            lokasi_count.set_index("Lokasi kantor penugasan")["Jumlah Responden"],
+            height=380, color="#4C72B0",
+        )
+
     st.markdown("#### Column Statistics — Gap Kompetensi")
     stats = data[GAP_COLS].describe().T[["mean", "std", "min", "max"]].round(3)
     stats["std (population)"] = data[GAP_COLS].std(ddof=0).round(6)
